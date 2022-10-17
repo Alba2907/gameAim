@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Khula&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  font-family: 'Khula', sans-serif;
+  height: 100vh;
+  overflow: hidden; /* прячет другие экраны кроме действующего*/
+  margin: 0;
+  text-align: center;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #16D9E3;
+}
+
+.start {
+  font-size: 1.5rem;
+}
+
+h1 {
+  line-height: 1.4;
+  font-size: 4rem;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  transition: margin 0.5s ease-out;  /* добавляет анимацию к скрин ап*/
+  background-color:  rgba(0,0,0,0.78);
+  box-shadow: 0 0 2px #000;
+}
+
+.screen.up {  /* класс ап делает взлет наверх*/
+  margin-top: -100vh;
+}
+
+.screen.down { /* класс ап делает взлет наверх*/
+  margin-top: +100vh;
+
+}
+.time-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.time-list li {
+  margin: 10px;
+}
+
+.time-btn {
+  background-color: transparent;
+  border: 2px solid #C0C0C0;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+}
+
+.time-btn:hover {
+  border: 2px solid #16D9E3;
+  color: #16D9E3;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.primary {
+  color: #16D9E3;
+}
+
+.game {
+  background-color: transparent;
+  border: 2px solid #C0C0C0;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 6px;
+}
+
+.game span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  text-transform: uppercase;
+  animation: neon-1 .1s ease-in-out infinite alternate;
+}
+
+@keyframes neon-1 {
+  from {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(191, 226, 255, 0.52), 0 0 21px rgba(191, 226, 255, 0.92), 0 0 34px rgba(191, 226, 255, 0.78), 0 0 54px rgba(191, 226, 255, 0.92);
+  }
+  to {
+    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(191, 226, 255, 0.58), 0 0 22px rgba(191, 226, 255, 0.84), 0 0 38px rgba(191, 226, 255, 0.88), 0 0 60px #FFF;
+  }
+}
+
+.game span:after {
+  content: '\00bb';
+  opacity: 0;
+  transition: 0.5s;
+  margin-left: 8px;
+}
+
+.game:hover span:after {
+  opacity: 1;
+}
+
+.game:active {
+  background: #485563FF;
+  border: 3px solid white;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: #272727;
+  box-shadow: 0 0 8px #000;
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.board.end {
+  cursor: auto;
+}
+
+.circle {
+  position: absolute;  /* положение круга в блоке*/
+  border-radius: 50%;
+  cursor: crosshair;
+  color: blanchedalmond;
+  color: deepskyblue;
+  color: hotpink;
+}
